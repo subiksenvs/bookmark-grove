@@ -1,13 +1,15 @@
 # Bookmark Grove
 
-Keep useful links searchable, tagged, and on your device.
+A personal knowledge library for collecting useful links with context and tags.
 
-## Run it
+## Features
+- Go standard-library HTTP backend and JSON API.
+- Persistent local JSON library with create, search, tagging, and delete.
+- Optional OpenAI-powered organization coach; demo answer works without a key.
+- Responsive UI with safe external-link handling.
 
-Open `index.html` in a modern browser. No build step or dependency install is required. Your data is stored in this browser with localStorage.
+## Run
+Requires Go 1.23+. Run `go run .` and open http://127.0.0.1:8792. Set `PORT` or `OPENAI_API_KEY` in your environment to configure the app. Data is stored in `data/library.json`.
 
-## Notes
-
-- Responsive, dependency-free HTML, CSS, and JavaScript.
-- Data stays on this device; clearing browser storage removes saved entries.
-
+## API
+`GET /api/links?q=...`, `POST /api/links`, `DELETE /api/links/:id`, `GET /api/summary`, `POST /api/coach`.
